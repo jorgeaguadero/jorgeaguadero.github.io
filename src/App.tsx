@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { EntryList } from './components/EntryList';
 import { Header } from './components/Header';
+import { Projects } from './components/Projects';
 import { Skills } from './components/Skills';
 import { Trajectory } from './components/Trajectory';
 import { cv, labels } from './content/cv';
@@ -17,6 +18,7 @@ export default function App() {
     <>
       <Header lang={lang} onLangChange={setLang} />
       <main className="container">
+        <Projects lang={lang} />
         <Trajectory lang={lang} />
         <EntryList id="experience" title={labels.experience} lane="work" entries={cv.work} lang={lang} />
         <EntryList id="education" title={labels.education} lane="study" entries={cv.education} lang={lang} />

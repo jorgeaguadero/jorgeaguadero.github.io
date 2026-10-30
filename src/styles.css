@@ -202,6 +202,101 @@ button {
   background: var(--lane);
 }
 
+/* Proyectos */
+.project + .project {
+  margin-top: 1.5rem;
+}
+
+.project h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.project-period {
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.project-summary {
+  max-width: 65ch;
+  margin-top: 1rem;
+  font-size: 1.0625rem;
+}
+
+.project-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2.5rem;
+  margin-top: 2rem;
+  color: var(--text-2);
+}
+
+.project-outcome {
+  grid-column: 1 / -1;
+}
+
+.project h4 {
+  margin-bottom: 0.375rem;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.project-outcome ul,
+.project-details ul {
+  padding-left: 1.1rem;
+}
+
+.project-outcome li + li,
+.project-details li + li {
+  margin-top: 0.375rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 0.25rem 0.875rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.project-details {
+  margin-top: 1.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--text-2);
+}
+
+.project-details summary {
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.project-details ul {
+  margin-top: 0.75rem;
+}
+
+.project-video {
+  display: block;
+  width: 100%;
+  margin-top: 1.75rem;
+  border-radius: 20px;
+}
+
 /* Cronograma */
 .timeline-caption {
   margin-bottom: 2rem;
@@ -407,6 +502,14 @@ button {
 
   .bar-label {
     display: none;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .project-blocks {
+    grid-template-columns: 1fr;
   }
 
   .entry {

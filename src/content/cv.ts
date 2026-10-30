@@ -49,7 +49,7 @@ export const cv: CV = {
           en: 'Reproducible ingestion: the same PDF processed twice gave 318 and 306 metrics; with a cache of LLM classifications, the result is always the same.',
         },
         {
-          es: 'Seguimiento de comités: de ver entre un 3 y un 9 % de cada sesión a leerlas completas con map-reduce, con un 100 % de citas literales en la validación.',
+          es: 'Seguimiento de comités: de ver entre un 3 y un 9\u00A0% de cada sesión a leerlas completas con map-reduce, con un 100\u00A0% de citas literales en la validación.',
           en: 'Committee tracking: from covering between 3% and 9% of each session to reading them in full with map-reduce, with 100% verbatim quotes in validation.',
         },
         {
