@@ -69,7 +69,7 @@ button {
 .container {
   max-width: 68rem;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding-inline: 1.5rem;
 }
 
 /* Cabecera: la franja menta no cambia en modo oscuro */
@@ -479,7 +479,7 @@ button {
 
 @media screen and (max-width: 760px) {
   .container {
-    padding: 0 1rem;
+    padding-inline: 1rem;
   }
 
   .hero-top {
@@ -519,7 +519,7 @@ button {
 
   .skills {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 2.5rem;
   }
 }
 
