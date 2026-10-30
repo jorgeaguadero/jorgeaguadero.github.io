@@ -1,0 +1,295 @@
+:root {
+  --mint: #68df9f;
+  --ink: #1a1a1a;
+  --bg: #e4e3e4;
+  --surface: #f7f7f7;
+  --text: #1a1a1a;
+  --text-2: #3d3d3d;
+  --muted: #5c5c5c;
+  --line: #c9c8c9;
+  /* Carril de formación del cronograma */
+  --study: #1a1a1a;
+  --study-text: #f7f7f7;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a1a;
+    --surface: #242424;
+    --text: #e9e9e9;
+    --text-2: #c8c8c8;
+    --muted: #9a9a9a;
+    --line: #383838;
+    --study: #e4e3e4;
+    --study-text: #1a1a1a;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+dl,
+dd {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Cabecera: la franja menta no cambia en modo oscuro */
+.hero {
+  padding: 1.5rem 0 3rem;
+  background: var(--mint);
+  color: var(--ink);
+}
+
+.hero :focus-visible {
+  outline-color: var(--ink);
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-role {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.lang-switch {
+  display: inline-flex;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 999px;
+  background: #f7f7f7;
+}
+
+.lang-switch button {
+  padding: 0.25rem 0.875rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lang-switch button[aria-pressed='true'] {
+  background: var(--ink);
+  color: #f7f7f7;
+}
+
+.hero-name {
+  max-width: 12ch;
+  margin-top: 2.5rem;
+  font-size: clamp(2.5rem, 7.5vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.hero-summary {
+  max-width: 60ch;
+  margin-top: 1.5rem;
+  font-size: 1.0625rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 2rem;
+  margin-top: 2rem;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 0;
+  list-style: none;
+  font-weight: 500;
+}
+
+.pdf-button {
+  padding: 0.75rem 1.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--mint);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Secciones */
+.section {
+  padding-top: 4rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 20px;
+  background: var(--surface);
+}
+
+/* Cada carril define su color; lo usan los puntos, las barras y el pie del cronograma */
+.lane-work {
+  --lane: var(--mint);
+  --lane-text: var(--ink);
+}
+
+.lane-study {
+  --lane: var(--study);
+  --lane-text: var(--study-text);
+}
+
+.dot {
+  flex-shrink: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 999px;
+  background: var(--lane);
+}
+
+/* Experiencia y formación */
+.entries {
+  border-top: 1px solid var(--line);
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 1rem;
+}
+
+.entry-dates {
+  display: flex;
+  flex-direction: column;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.entry h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.entry-org {
+  margin-top: 0.125rem;
+  color: var(--text-2);
+  font-weight: 500;
+}
+
+.entry-points {
+  margin-top: 0.75rem;
+  padding-left: 1.1rem;
+  color: var(--text-2);
+}
+
+.entry-points li + li {
+  margin-top: 0.25rem;
+}
+
+/* Habilidades e idiomas */
+.skills {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+.definitions > div {
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.definitions dt {
+  font-weight: 600;
+}
+
+.definitions dd {
+  color: var(--text-2);
+}
+
+.footer {
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 760px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
