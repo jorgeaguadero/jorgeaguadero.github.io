@@ -202,6 +202,115 @@ button {
   background: var(--lane);
 }
 
+/* Cronograma */
+.timeline-caption {
+  margin-bottom: 2rem;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 6px solid var(--lane);
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.timeline-caption-title {
+  color: var(--text);
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+
+.timeline-caption a {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.lane {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.lane + .lane {
+  margin-top: 1rem;
+}
+
+.lane-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 32px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.lane-track {
+  position: relative;
+  display: grid;
+  gap: 6px;
+}
+
+.lane-row {
+  position: relative;
+  height: 32px;
+}
+
+/* Las líneas sobresalen medio hueco por arriba y por abajo para enlazar los carriles */
+.year-line {
+  position: absolute;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  width: 1px;
+  background: var(--line);
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  padding: 0 0.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--lane);
+  color: var(--lane-text);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transform-origin: left center;
+  animation: grow 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.bar[aria-pressed='true'] {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    animation: none;
+  }
+}
+
+.axis .lane-track {
+  height: 1.25rem;
+}
+
+.year-label {
+  position: absolute;
+  top: 0;
+  padding-left: 4px;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
 /* Experiencia y formación */
 .entries {
   border-top: 1px solid var(--line);
@@ -281,6 +390,23 @@ button {
   .hero-top {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .lane {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .lane-name {
+    height: auto;
+  }
+
+  .axis > span {
+    display: none;
+  }
+
+  .bar-label {
+    display: none;
   }
 
   .entry {
