@@ -22,22 +22,22 @@ export const cv: CV = {
       id: 'multiagent-platform',
       title: {
         es: 'Plataforma multiagente para la dirección de una gran empresa',
-        en: 'Multi-agent platform for the leadership of a large company',
+        en: "Multi-agent platform for a large company's executive team",
       },
       org: 'STEMIA',
       start: '2025-12',
       end: null,
       summary: {
         es: 'Cinco asistentes de IA en una sola aplicación para que la dirección prepare reuniones y analice datos financieros y de negocio, con una regla: si no hay dato que lo respalde, no se inventa.',
-        en: 'Five AI assistants in a single application so leadership can prepare meetings and analyze financial and business data, with one rule: if there is no data to back it up, nothing is made up.',
+        en: 'Five AI assistants in a single application that help the executive team prepare meetings and analyze financial and business data, with one rule: without data to back it up, nothing gets made up.',
       },
       problem: {
         es: 'Los directivos reparten su tiempo entre reuniones, informes de la competencia, datos de ventas y la red de tiendas, cada cosa en una herramienta distinta. Y a ese nivel, una cifra inventada por una IA no es un fallo menor: acaba en una mala decisión.',
-        en: 'Executives split their time between meetings, competitor reports, sales data and the store network, each in a different tool. And at that level, a figure invented by an AI is not a minor glitch: it ends up in a bad decision.',
+        en: 'Executives split their time between meetings, competitor reports, sales data and the store network, each in a different tool. And at that level, a figure invented by an AI is not a minor glitch: it leads to a bad decision.',
       },
       role: {
         es: 'Diseñé y construí casi por completo el agente de inteligencia financiera y el de agenda ejecutiva, la mayor parte de la API de la plataforma y el CI/CD, y escribí 10 de los 15 documentos de decisiones de arquitectura (ADR) del proyecto. Orquestación de agentes propia, sin frameworks, con arquitectura hexagonal y tests que impiden saltarse las capas.',
-        en: "I designed and built almost all of the financial intelligence agent and the executive agenda agent, most of the platform's API and the CI/CD, and wrote 10 of the project's 15 architecture decision records (ADRs). In-house agent orchestration, no frameworks, with hexagonal architecture and tests that stop anyone from skipping layers.",
+        en: "I designed and built almost all of the financial intelligence agent and the executive agenda agent, most of the platform's API and the CI/CD, and wrote 10 of the project's 15 architecture decision records (ADRs). Custom agent orchestration, no frameworks, with hexagonal architecture and tests that enforce the layer boundaries.",
       },
       outcome: [
         {
@@ -50,7 +50,7 @@ export const cv: CV = {
         },
         {
           es: 'Seguimiento de comités: de ver entre un 3 y un 9\u00A0% de cada sesión a leerlas completas con map-reduce, con un 100\u00A0% de citas literales en la validación.',
-          en: 'Committee tracking: from covering between 3% and 9% of each session to reading them in full with map-reduce, with 100% verbatim quotes in validation.',
+          en: 'Committee tracking: from reading only 3–9% of each session to reading them in full with map-reduce, with 100% verbatim quotes in validation.',
         },
         {
           es: 'Actas de consejo procesadas con Azure OpenAI en la UE y con los emails enmascarados antes de llegar al modelo.',
@@ -61,7 +61,7 @@ export const cv: CV = {
       details: [
         {
           es: 'Sin framework de agentes: cada paso tenía que ser auditable, poder abstenerse con un motivo y probarse sin llamar al LLM. Con código propio, cada decisión de enrutado es una función con su test.',
-          en: 'No agent framework: every step had to be auditable, able to abstain with a reason and testable without calling the LLM. With our own code, every routing decision is a function with its own test.',
+          en: 'No agent framework: every step had to be auditable, able to abstain with a reason and testable without calling the LLM. With custom code, every routing decision is a function with its own test.',
         },
         {
           es: 'Heurística primero y LLM solo para lo ambiguo al clasificar las tablas de los informes.',
@@ -95,7 +95,7 @@ export const cv: CV = {
         },
         {
           es: 'Orquestación propia de agentes con integración directa de LLMs, sin frameworks de terceros.',
-          en: 'In-house agent orchestration with direct LLM integration, without third-party frameworks.',
+          en: 'Custom agent orchestration with direct LLM integration, without third-party frameworks.',
         },
         {
           es: 'Pipelines RAG con ingesta documental y transcripción de audio para dar acceso conversacional a información dispersa en múltiples fuentes.',
@@ -126,7 +126,7 @@ export const cv: CV = {
       points: [
         {
           es: 'Desarrollo del frontend con React: me incorporé de forma puntual para construir la interfaz de usuario de la aplicación.',
-          en: "Frontend development with React: I joined for a short engagement to build the application's user interface.",
+          en: "Frontend development with React: I joined for a one-off engagement to build the application's user interface.",
         },
       ],
     },
@@ -229,7 +229,7 @@ export const cv: CV = {
     {
       id: 'the-bridge',
       short: 'The Bridge',
-      title: { es: 'Bootcamp AI Agentic', en: 'Agentic AI Bootcamp' },
+      title: 'Bootcamp AI Agentic',
       org: 'The Bridge',
       start: '2025-09',
       end: '2025-11',
@@ -245,7 +245,7 @@ export const cv: CV = {
       short: 'CFGS DAW',
       title: {
         es: 'CFGS Desarrollo de Aplicaciones Web',
-        en: 'Higher Vocational Diploma in Web Application Development (CFGS DAW)',
+        en: 'Higher Technician Diploma in Web Application Development',
       },
       org: 'FP Euroformac',
       detail: 'Madrid',
@@ -266,7 +266,7 @@ export const cv: CV = {
       short: 'CFGS Telecom',
       title: {
         es: 'CFGS Sistemas de Telecomunicaciones e Informática',
-        en: 'Higher Vocational Diploma in Telecommunications and Computer Systems',
+        en: 'Higher Technician Diploma in Telecommunication and Computer Systems',
       },
       org: 'IES Torrente Ballester',
       detail: 'Salamanca',
@@ -301,7 +301,7 @@ export const labels = {
   problem: { es: 'Problema', en: 'Problem' },
   role: { es: 'Qué hice', en: 'What I did' },
   outcome: { es: 'Resultado', en: 'Outcome' },
-  details: { es: 'Cómo está hecho', en: 'How it is built' },
+  details: { es: 'Cómo está hecho', en: "How it's built" },
   trajectory: { es: 'Trayectoria', en: 'Career timeline' },
   work: { es: 'Trabajo', en: 'Work' },
   study: { es: 'Formación', en: 'Education' },
