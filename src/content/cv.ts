@@ -135,6 +135,14 @@ export const cv: CV = {
           en: 'Image uploads with multer and a visual fallback when a room has no photo.',
         },
       ],
+      image: {
+        src: '/projects/rehearsal-rooms.jpg',
+        alt: {
+          es: 'Panel de administración de Rehearsal Rooms con las salas, su foto, capacidad y precio',
+          en: 'Rehearsal Rooms admin panel with the rooms, their photo, capacity and price',
+        },
+      },
+      caption: { es: 'Captura con los datos de prueba del repositorio.', en: 'Screenshot with the repository test data.' },
     },
   ],
 
