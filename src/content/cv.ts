@@ -15,6 +15,7 @@ export const cv: CV = {
     { label: 'jorgeaguaderodev@gmail.com', href: 'mailto:jorgeaguaderodev@gmail.com' },
     { label: 'linkedin.com/in/jorgeaguadero', href: 'https://www.linkedin.com/in/jorgeaguadero' },
     { label: 'github.com/jorgeaguadero', href: 'https://github.com/jorgeaguadero' },
+    { label: 'jorgeaguadero.github.io', href: 'https://jorgeaguadero.github.io/', printOnly: true },
   ],
 
   projects: [

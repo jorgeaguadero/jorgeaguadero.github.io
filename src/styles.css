@@ -151,6 +151,10 @@ button {
   font-weight: 500;
 }
 
+.print-only {
+  display: none;
+}
+
 .pdf-button {
   padding: 0.75rem 1.5rem;
   border: 0;
@@ -573,10 +577,13 @@ button {
   .pdf-button,
   .timeline-caption,
   .footer,
-  .project-blocks,
-  .project-details,
-  .project-media {
+  .projects {
     display: none;
+  }
+
+  /* En papel los proyectos no caben: se enlaza la web, que en pantalla sobraría */
+  .print-only {
+    display: block;
   }
 
   .hero {
@@ -604,8 +611,7 @@ button {
     margin-top: 2mm;
   }
 
-  .contact a,
-  .project-repo a {
+  .contact a {
     text-decoration: none;
   }
 
@@ -622,31 +628,6 @@ button {
   .card {
     padding: 0;
     border-radius: 0;
-  }
-
-  .project h3 {
-    font-size: 10.5pt;
-  }
-
-  .project-period,
-  .project-repo,
-  .project-summary {
-    max-width: none;
-    font-size: inherit;
-  }
-
-  .project-summary {
-    margin-top: 1mm;
-  }
-
-  .tags {
-    gap: 1.5mm;
-    margin-top: 2mm;
-  }
-
-  .tags li {
-    padding: 0 2.5mm;
-    font-size: 7.5pt;
   }
 
   .lane,

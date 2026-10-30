@@ -35,7 +35,7 @@ export type Project = {
   caption?: Text; // pie de la captura o del vídeo
 };
 
-export type Contact = { label: string; href: string };
+export type Contact = { label: string; href: string; printOnly?: boolean };
 
 export type Skill = { name: Text; items: string };
 

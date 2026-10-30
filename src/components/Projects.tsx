@@ -5,7 +5,7 @@ import type { Lang } from '../types';
 
 export function Projects({ lang }: { lang: Lang }) {
   return (
-    <section className="section" aria-labelledby="projects-title">
+    <section className="section projects" aria-labelledby="projects-title">
       <h2 id="projects-title" className="section-title">
         {t(labels.projects, lang)}
       </h2>

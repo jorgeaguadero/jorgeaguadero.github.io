@@ -38,7 +38,7 @@ export function Header({ lang, onLangChange }: Props) {
         <div className="hero-actions">
           <ul className="contact">
             {cv.contact.map((item) => (
-              <li key={item.href}>
+              <li key={item.href} className={item.printOnly ? 'print-only' : undefined}>
                 <a href={item.href}>{item.label}</a>
               </li>
             ))}
