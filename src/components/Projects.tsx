@@ -53,15 +53,10 @@ export function Projects({ lang }: { lang: Lang }) {
           </details>
 
           {project.video && (
-            <video
-              className="project-video"
-              src={project.video}
-              poster={project.poster}
-              controls
-              muted
-              playsInline
-              preload="none"
-            />
+            <figure className="project-video">
+              <video src={project.video} poster={project.poster} controls muted playsInline preload="none" />
+              <figcaption>{t(labels.videoNote, lang)}</figcaption>
+            </figure>
           )}
         </article>
       ))}

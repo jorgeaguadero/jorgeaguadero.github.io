@@ -58,6 +58,8 @@ export const cv: CV = {
         },
       ],
       tags: ['Multi-agent', 'RAG', 'LLM', 'FastAPI', 'Next.js', 'DuckDB', 'Azure OpenAI'],
+      video: '/videos/financial-agent-demo.mp4',
+      poster: '/videos/financial-agent-demo.png',
       details: [
         {
           es: 'Sin framework de agentes: cada paso tenía que ser auditable, poder abstenerse con un motivo y probarse sin llamar al LLM. Con código propio, cada decisión de enrutado es una función con su test.',
@@ -302,6 +304,10 @@ export const labels = {
   role: { es: 'Qué hice', en: 'What I did' },
   outcome: { es: 'Resultado', en: 'Outcome' },
   details: { es: 'Cómo está hecho', en: "How it's built" },
+  videoNote: {
+    es: 'Recreación de la interfaz con datos inventados: el producto real es privado.',
+    en: 'Recreation of the interface with made-up data: the real product is private.',
+  },
   trajectory: { es: 'Trayectoria', en: 'Career timeline' },
   work: { es: 'Trabajo', en: 'Work' },
   study: { es: 'Formación', en: 'Education' },
