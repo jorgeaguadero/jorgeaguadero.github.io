@@ -290,17 +290,25 @@ button {
   margin-top: 0.75rem;
 }
 
-.project-video {
+.project-repo {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.project-media {
   margin: 1.75rem 0 0;
 }
 
-.project-video video {
+.project-media img,
+.project-media video {
   display: block;
   width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
   border-radius: 20px;
 }
 
-.project-video figcaption {
+.project-media figcaption {
   margin-top: 0.5rem;
   color: var(--muted);
   font-size: 0.8125rem;
@@ -565,9 +573,9 @@ button {
   .pdf-button,
   .timeline-caption,
   .footer,
-  .project-outcome,
+  .project-blocks,
   .project-details,
-  .project-video {
+  .project-media {
     display: none;
   }
 
@@ -596,7 +604,8 @@ button {
     margin-top: 2mm;
   }
 
-  .contact a {
+  .contact a,
+  .project-repo a {
     text-decoration: none;
   }
 
@@ -607,6 +616,7 @@ button {
   .section-title {
     margin-bottom: 1.5mm;
     font-size: 12pt;
+    break-after: avoid;
   }
 
   .card {
@@ -619,6 +629,7 @@ button {
   }
 
   .project-period,
+  .project-repo,
   .project-summary {
     max-width: none;
     font-size: inherit;
@@ -626,16 +637,6 @@ button {
 
   .project-summary {
     margin-top: 1mm;
-  }
-
-  .project-blocks {
-    gap: 2mm 6mm;
-    margin-top: 2mm;
-  }
-
-  .project h4 {
-    margin-bottom: 0.5mm;
-    font-size: inherit;
   }
 
   .tags {

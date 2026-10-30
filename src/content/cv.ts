@@ -19,63 +19,119 @@ export const cv: CV = {
 
   projects: [
     {
-      id: 'multiagent-platform',
-      title: {
-        es: 'Plataforma multiagente para la dirección de una gran empresa',
-        en: "Multi-agent platform for a large company's executive team",
-      },
-      org: 'STEMIA',
-      start: '2025-12',
+      id: 'money-manager',
+      title: 'Money Manager',
+      org: { es: 'Proyecto personal', en: 'Personal project' },
+      start: '2026-07',
       end: null,
       summary: {
-        es: 'Cinco asistentes de IA en una sola aplicación para que la dirección prepare reuniones y analice datos financieros y de negocio, con una regla: si no hay dato que lo respalde, no se inventa.',
-        en: 'Five AI assistants in a single application that help the executive team prepare meetings and analyze financial and business data, with one rule: without data to back it up, nothing gets made up.',
+        es: 'Mi renta, mis huchas y mi patrimonio en un solo sitio: una app web para quien cobra de varias fuentes y quiere saber en cada momento cuánto le tocará pagar en la renta, cuánto apartar de cada cobro y dónde está su dinero.',
+        en: 'My income tax, savings pots and net worth in one place: a web app for people paid from several sources who want to know at any moment how much tax they will owe, how much to set aside from each payment and where their money is.',
       },
       problem: {
-        es: 'Los directivos reparten su tiempo entre reuniones, informes de la competencia, datos de ventas y la red de tiendas, cada cosa en una herramienta distinta. Y a ese nivel, una cifra inventada por una IA no es un fallo menor: acaba en una mala decisión.',
-        en: 'Executives split their time between meetings, competitor reports, sales data and the store network, each in a different tool. And at that level, a figure invented by an AI is not a minor glitch: it leads to a bad decision.',
+        es: 'Cobro una nómina y, además, bolos como músico, con distintas retenciones, y nunca sabía cuánto me tocaría pagar en la renta ni cuánto apartar de cada bolo. Desde 2021 lo llevaba en una hoja de cálculo: una pestaña para el IRPF, otra para lo apartado y otra con el valor de cada cuenta a fin de mes.',
+        en: 'I earn a salary plus fees from gigs as a musician, each with a different withholding, and I never knew how much income tax I would owe or how much to set aside from each gig. Since 2021 I had tracked it in a spreadsheet: one tab for income tax, another for savings and another for the value of each account at month end.',
       },
       role: {
-        es: 'Diseñé y construí casi por completo el agente de inteligencia financiera y el de agenda ejecutiva, la mayor parte de la API de la plataforma y el CI/CD, y escribí 10 de los 15 documentos de decisiones de arquitectura (ADR) del proyecto. Orquestación de agentes propia, sin frameworks, con arquitectura hexagonal y tests que impiden saltarse las capas.',
-        en: "I designed and built almost all of the financial intelligence agent and the executive agenda agent, most of the platform's API and the CI/CD, and wrote 10 of the project's 15 architecture decision records (ADRs). Custom agent orchestration, no frameworks, with hexagonal architecture and tests that enforce the layer boundaries.",
+        es: 'La diseñé y construí entera: Next.js como BFF, FastAPI como fuente de verdad del dominio, PostgreSQL, y despliegue con Docker en Northflank. Cada decisión con peso tiene su documento de decisión de arquitectura (ADR) con las alternativas descartadas.',
+        en: 'I designed and built all of it: Next.js as a BFF, FastAPI as the source of truth for the domain, PostgreSQL, and deployment with Docker on Northflank. Every significant decision has its own architecture decision record (ADR), including the alternatives that were ruled out.',
       },
       outcome: [
         {
-          es: 'El agente financiero lee informes anuales en PDF y XBRL y responde con la cifra y su fuente (documento y página) o con una cita literal; si el dato no existe, se abstiene y explica qué falta. Lo respaldan unos 2.000 tests.',
-          en: "The financial agent reads annual reports in PDF and XBRL and answers with the figure and its source (document and page) or with a verbatim quote; if the data doesn't exist, it abstains and explains what is missing. Around 2,000 tests back it up.",
+          es: 'Motor de IRPF con la escala estatal y la de Castilla y León: lo que ya debo a fecha de hoy y la previsión a 31 de diciembre, con el desglose del cálculo para auditarlo. Cifras contrastadas con la AEAT para 2025.',
+          en: 'Income tax engine with the national and Castilla y León brackets: what I already owe to date and the forecast at 31 December, with the full breakdown so it can be audited. Figures checked against the Spanish Tax Agency (AEAT) for 2025.',
         },
         {
-          es: 'Ingesta reproducible: el mismo PDF procesado dos veces daba 318 y 306 métricas; con una caché de clasificaciones del LLM, el resultado es siempre el mismo.',
-          en: 'Reproducible ingestion: the same PDF processed twice gave 318 and 306 metrics; with a cache of LLM classifications, the result is always the same.',
+          es: 'Nóminas en PDF: la app propone las cifras leyendo la capa de texto y recurre al OCR solo si es un escaneo; también por lotes.',
+          en: 'Payslips in PDF: the app suggests the figures from the text layer and only falls back to OCR for scans; batch uploads too.',
         },
         {
-          es: 'Seguimiento de comités: de ver entre un 3 y un 9\u00A0% de cada sesión a leerlas completas con map-reduce, con un 100\u00A0% de citas literales en la validación.',
-          en: 'Committee tracking: from reading only 3–9% of each session to reading them in full with map-reduce, with 100% verbatim quotes in validation.',
+          es: 'Huchas con reglas de reparto por fuente ("de cada bolo, el 28 % a la hucha del IRPF") que, al cobrar, proponen lo que toca apartar y dicen si vas al día.',
+          en: 'Savings pots with allocation rules per income source ("28% of every gig goes to the tax pot") that suggest what to set aside on each payment and show whether you are up to date.',
         },
         {
-          es: 'Actas de consejo procesadas con Azure OpenAI en la UE y con los emails enmascarados antes de llegar al modelo.',
-          en: 'Board minutes processed with Azure OpenAI in the EU, with emails masked before they reach the model.',
+          es: 'Unos 430 tests en el backend contra un PostgreSQL real y unos 210 en el frontend, con CI en cada push: linters, tipos estrictos, migraciones al día y auditoría de dependencias.',
+          en: 'Around 430 backend tests against a real PostgreSQL and around 210 frontend tests, with CI on every push: linters, strict types, up-to-date migrations and a dependency audit.',
         },
       ],
-      tags: ['Multi-agent', 'RAG', 'LLM', 'FastAPI', 'Next.js', 'DuckDB', 'Azure OpenAI'],
-      video: '/videos/financial-agent-demo.mp4',
-      poster: '/videos/financial-agent-demo.png',
+      tags: ['Next.js', 'React', 'TypeScript', 'FastAPI', 'Python', 'PostgreSQL', 'Docker', 'OCR'],
       details: [
         {
-          es: 'Sin framework de agentes: cada paso tenía que ser auditable, poder abstenerse con un motivo y probarse sin llamar al LLM. Con código propio, cada decisión de enrutado es una función con su test.',
-          en: 'No agent framework: every step had to be auditable, able to abstain with a reason and testable without calling the LLM. With custom code, every routing decision is a function with its own test.',
+          es: 'Next.js como BFF: el navegador nunca habla con FastAPI. Los Server Components leen, las Server Actions escriben, y el login con Google se resuelve en el servidor con una sesión en cookie httpOnly y un token opaco que emite y revoca FastAPI.',
+          en: 'Next.js as a BFF: the browser never talks to FastAPI. Server Components read, Server Actions write, and Google login is handled on the server with an httpOnly cookie session and an opaque token that FastAPI issues and revokes.',
         },
         {
-          es: 'Heurística primero y LLM solo para lo ambiguo al clasificar las tablas de los informes.',
-          en: 'Heuristics first, and the LLM only for ambiguous cases, when classifying the tables in the reports.',
+          es: 'El motor fiscal es código puro, sin base de datos ni HTTP, con las escalas como datos versionados y Decimal en todos los importes.',
+          en: 'The tax engine is pure code, with no database or HTTP, with the brackets as versioned data and Decimal for every amount.',
         },
         {
-          es: 'RAG acotado por empresa en un corpus multiempresa, con verificación posterior y abstención si la respuesta no corresponde a la empresa pedida.',
-          en: 'Company-scoped RAG over a multi-company corpus, with a verification step afterwards and abstention if the answer does not belong to the requested company.',
+          es: 'Tipos de punta a punta: el cliente del frontend se genera desde el OpenAPI de FastAPI; Zod valida en el frontend y Pydantic en la API.',
+          en: 'End-to-end types: the frontend client is generated from the FastAPI OpenAPI spec; Zod validates on the frontend and Pydantic in the API.',
         },
         {
-          es: 'Map-reduce para el seguimiento de comités: una llamada por sesión extrae compromisos con su cita literal, y un compromiso solo pasa a "cumplido" cuando una sesión posterior lo cierra de forma explícita.',
-          en: 'Map-reduce for committee tracking: one call per session extracts commitments with their verbatim quote, and a commitment only becomes "fulfilled" when a later session explicitly closes it.',
+          es: 'PDFs, OCR y hojas de cálculo se procesan en un proceso aparte con tiempo y memoria máximos, para que un documento malicioso no tumbe el servidor.',
+          en: 'PDFs, OCR and spreadsheets are processed in a separate process with time and memory limits, so a malicious document cannot take the server down.',
+        },
+        {
+          es: 'Aislamiento entre usuarios comprobado con un barrido de miles de peticiones cruzadas: cada consulta filtra por el usuario de la sesión, nunca por un id que llegue del cliente.',
+          en: 'Isolation between users verified with a sweep of thousands of cross-user requests: every query filters by the session user, never by an id sent by the client.',
+        },
+      ],
+      image: {
+        src: '/projects/money-manager.png',
+        alt: {
+          es: 'Panel de Money Manager con la renta a fecha de hoy y la previsión de cierre',
+          en: 'Money Manager dashboard with income tax to date and the year-end forecast',
+        },
+      },
+      caption: { es: 'Captura con datos de demostración.', en: 'Screenshot with demo data.' },
+    },
+    {
+      id: 'rehearsal-rooms',
+      title: 'Rehearsal Rooms',
+      org: { es: 'Proyecto personal', en: 'Personal project' },
+      start: '2025-04',
+      end: '2025-06',
+      repo: 'https://github.com/jorgeaguadero/Rehearsal-rooms',
+      summary: {
+        es: 'Aplicación web para reservar salas de ensayo: los músicos se registran, reservan y gestionan sus reservas, y los administradores gestionan usuarios y salas.',
+        en: 'Web application for booking rehearsal rooms: musicians sign up, book rooms and manage their bookings, while admins manage users and rooms.',
+      },
+      problem: {
+        es: 'Un local de ensayo tiene que cuadrar los horarios de muchos grupos en pocas salas sin que dos reservas se pisen, y alguien tiene que poder administrar salas y usuarios sin tocar la base de datos.',
+        en: 'A rehearsal space has to fit many bands into a few rooms without two bookings overlapping, and someone has to be able to manage rooms and users without touching the database.',
+      },
+      role: {
+        es: 'Full stack de principio a fin: API REST con Node.js, Express y MySQL organizada en rutas, controladores y repositorios, y frontend en React con Vite y Tailwind.',
+        en: 'Full stack from start to finish: a REST API with Node.js, Express and MySQL organized into routes, controllers and repositories, and a React frontend with Vite and Tailwind.',
+      },
+      outcome: [
+        {
+          es: 'Reservas con validación de disponibilidad en tiempo real, historial y próximas reservas.',
+          en: 'Bookings with real-time availability checks, history and upcoming bookings.',
+        },
+        {
+          es: 'Autenticación con JWT y contraseñas con bcrypt, con roles de usuario y administrador.',
+          en: 'JWT authentication and bcrypt-hashed passwords, with user and admin roles.',
+        },
+        {
+          es: 'Panel de administración con paginación y buscador, y subida de imágenes de las salas.',
+          en: 'Admin panel with pagination and search, and image uploads for the rooms.',
+        },
+      ],
+      tags: ['React', 'Vite', 'Tailwind', 'Node.js', 'Express', 'MySQL', 'JWT'],
+      details: [
+        {
+          es: 'Backend en capas: las rutas solo enrutan, los controladores llevan la lógica y los repositorios son los únicos que hablan con MySQL.',
+          en: 'Layered backend: routes only route, controllers hold the logic and repositories are the only ones that talk to MySQL.',
+        },
+        {
+          es: 'La disponibilidad se comprueba en el servidor antes de guardar, no solo en el formulario: si el tramo se solapa con otra reserva activa, la API responde con un 409.',
+          en: 'Availability is checked on the server before saving, not just in the form: if the slot overlaps another active booking, the API responds with a 409.',
+        },
+        {
+          es: 'Subida de imágenes con multer y un fallback visual cuando una sala no tiene foto.',
+          en: 'Image uploads with multer and a visual fallback when a room has no photo.',
         },
       ],
     },
@@ -304,10 +360,6 @@ export const labels = {
   role: { es: 'Qué hice', en: 'What I did' },
   outcome: { es: 'Resultado', en: 'Outcome' },
   details: { es: 'Cómo está hecho', en: "How it's built" },
-  videoNote: {
-    es: 'Recreación de la interfaz con datos inventados: el producto real es privado.',
-    en: 'Recreation of the interface with made-up data: the real product is private.',
-  },
   trajectory: { es: 'Trayectoria', en: 'Career timeline' },
   work: { es: 'Trabajo', en: 'Work' },
   study: { es: 'Formación', en: 'Education' },

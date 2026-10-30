@@ -19,17 +19,20 @@ export type Entry = {
 export type Project = {
   id: string;
   title: Text;
-  org: string;
+  org: Text;
   start: string;
   end: string | null;
+  repo?: string;
   summary: Text;
   problem: Text;
   role: Text;
   outcome: Text[];
   tags: string[];
   details: Text[];
+  image?: { src: string; alt: Text };
   video?: string;
   poster?: string;
+  caption?: Text; // pie de la captura o del vídeo
 };
 
 export type Contact = { label: string; href: string };

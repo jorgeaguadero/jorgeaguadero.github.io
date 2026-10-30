@@ -14,8 +14,13 @@ export function Projects({ lang }: { lang: Lang }) {
         <article key={project.id} className="card project">
           <h3>{t(project.title, lang)}</h3>
           <p className="project-period">
-            {project.org} · {formatRange(project.start, project.end, lang)}
+            {t(project.org, lang)} · {formatRange(project.start, project.end, lang)}
           </p>
+          {project.repo && (
+            <p className="project-repo">
+              <a href={project.repo}>{project.repo.replace('https://', '')}</a>
+            </p>
+          )}
           <p className="project-summary">{t(project.summary, lang)}</p>
 
           <div className="project-blocks">
@@ -52,10 +57,13 @@ export function Projects({ lang }: { lang: Lang }) {
             </ul>
           </details>
 
-          {project.video && (
-            <figure className="project-video">
-              <video src={project.video} poster={project.poster} controls muted playsInline preload="none" />
-              <figcaption>{t(labels.videoNote, lang)}</figcaption>
+          {(project.image || project.video) && (
+            <figure className="project-media">
+              {project.image && <img src={project.image.src} alt={t(project.image.alt, lang)} loading="lazy" />}
+              {project.video && (
+                <video src={project.video} poster={project.poster} controls muted playsInline preload="none" />
+              )}
+              {project.caption && <figcaption>{t(project.caption, lang)}</figcaption>}
             </figure>
           )}
         </article>
